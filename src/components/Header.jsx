@@ -5,8 +5,7 @@ const Header = () => {
     return (
         <div className="header">
             <div className="logo">
-                <p>overClock</p>
-                <img src={logo} alt="gpu-image" />
+                overClock
             </div>
             <div className="search-bar">
                 <input className='header-search' type="text" placeholder='search games'/>
