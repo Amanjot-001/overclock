@@ -1,4 +1,5 @@
 import '../assets/styles/sideNav.css'
+import Navbtn from './NavBtn';
 
 const SideNav = () => {
     return (
@@ -13,7 +14,9 @@ const SideNav = () => {
                 Amanjot
                 <div className="user-initial">A</div>
             </div>
-            
+            <div className="user-games">
+                <Navbtn image={'faGift'} title={'Wishlist'}/>
+            </div>
         </div>
     )
 }
