@@ -1,5 +1,6 @@
 import '../assets/styles/header.css';
-import logo from '../assets/images/logo.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
     return (
@@ -13,7 +14,10 @@ const Header = () => {
             <div className="navs">
                 <div className="sign-in">Sign-in</div>
                 <div className="curr-path">My library</div>
-                <div className="cart">cart</div>
+                <div className="cart">
+                    <FontAwesomeIcon icon={faCartShopping} />
+                    (0)
+                </div>
             </div>
         </div>
     )

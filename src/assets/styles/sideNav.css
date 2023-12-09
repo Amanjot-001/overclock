@@ -37,6 +37,8 @@
 
     p {
         margin-top: 0.8rem;
+        border-bottom: 1px solid #fff;
+        width: max-content;
     }
 }
 
