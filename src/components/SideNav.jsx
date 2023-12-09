@@ -14,8 +14,33 @@ const SideNav = () => {
                 Amanjot
                 <div className="user-initial">A</div>
             </div>
-            <div className="user-games">
-                <Navbtn image={'faGift'} title={'Wishlist'}/>
+            <div className="user-list">
+                <Navbtn icon={'faGift'} title={'Wishlist'}/>
+                <Navbtn icon={'faLayerGroup'} title={'My library'}/>
+            </div>
+            <div className="new-releases">
+                <p>New Releases</p>
+                <Navbtn icon={'faStar'} title={'Last 30 days'}/>
+                <Navbtn icon={'faFire'} title={'this week'}/>
+                <Navbtn icon={'faForwardFast'} title={'Next week'}/>
+                <Navbtn icon={'faCalendarDays'} title={'Release calender'}/>
+            </div>
+            <div className="top">
+                <p>Top</p>
+                <Navbtn icon={'faTrophy'} title={'Best of the year'}/>
+                <Navbtn icon={'faArrowUpRightDots'} title={'Popular in 2022'}/>
+                <Navbtn icon={'faCrown'} title={'All time top 250'}/>
+            </div>
+            <div className="platforms">
+                <p>Platforms</p>
+                <Navbtn icon={'faWindows'} title={'PC'}/>
+                <Navbtn icon={'faPlaystation'} title={'PlayStation'}/>
+                <Navbtn icon={'faXbox'} title={'Xbox One'}/>
+                <Navbtn icon={'faApple'} title={'ios'}/>
+                <Navbtn icon={'faAndroid'} title={'Android'}/>
+            </div>
+            <div className="genres">
+                <p>Genres</p>
             </div>
         </div>
     )

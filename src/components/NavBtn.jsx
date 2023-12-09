@@ -1,14 +1,13 @@
 import '../assets/styles/navBtn.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGift, faLayerGroup, faStar, faFire, faForwardFast, faTrophy, faArrowUpRightDots, faCrown } from '@fortawesome/free-solid-svg-icons';
-import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
-import { faPlaystation, faXbox, faApple, faAndroid, faWindows } from '@fortawesome/free-brands-svg-icons';
+import getIcon from '../utils/icons';
 
-const Navbtn = ({image, title}) => {
+const Navbtn = ({icon, title}) => {
+    const iconName = getIcon(icon);
     return (
         <div className="navBtn">
             <div className="image">
-                <FontAwesomeIcon icon={image} />
+                <FontAwesomeIcon icon={iconName} />
             </div>
             <div className="title">
                 {title}
