@@ -7,7 +7,7 @@
     color: #fff;
     gap: 1rem;
     padding: 2rem;
-    width: max-content;
+    /* width: max-content; */
     font-weight: 700;
 }
 
@@ -21,5 +21,16 @@
         padding: 0.5rem 0.7rem;
         background-color: rgb(73, 73, 188);
         font-size: 1rem;
+    }
+}
+
+.user-list, .new-releases, .platforms, .top, .genres {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    p {
+        margin-top: 0.8rem;
     }
 }

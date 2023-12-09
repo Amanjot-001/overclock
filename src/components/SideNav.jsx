@@ -1,5 +1,6 @@
 import '../assets/styles/sideNav.css'
 import Navbtn from './NavBtn';
+import GenreBtn from './genreBtn';
 
 const SideNav = () => {
     return (
@@ -41,6 +42,13 @@ const SideNav = () => {
             </div>
             <div className="genres">
                 <p>Genres</p>
+                <GenreBtn icon={'action'} title={'Action'} />
+                <GenreBtn icon={'stratedy'} title={'Stratedy'} />
+                <GenreBtn icon={'rpg'} title={'RPG'} />
+                <GenreBtn icon={'shooter'} title={'adventure'} />
+                <GenreBtn icon={'puzzle'} title={'Puzzle'} />
+                <GenreBtn icon={'racing'} title={'Racing'} />
+                <GenreBtn icon={'sports'} title={'Sports'} />
             </div>
         </div>
     )

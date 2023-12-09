@@ -1,18 +1,21 @@
-.navBtn {
+.genreBtn {
     display: flex;
     gap: 0.5rem;
     align-items: center;
     font-size: 1.1rem;  
 }
 
-.image {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 0.3rem ;
+.genre-image {
     border-radius: 5px;
     width: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+img {
+    width: 100%;
+    background-size: cover;
 }
 
 .title {
