@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindows } from '@fortawesome/free-brands-svg-icons';
 import { faFaceGrinHearts } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types'
 import '../assets/styles/gameCard.css'
 
-const GameCard = () => {
+const GameCard = ({ data }) => {
     return (
         <div className="game-card">
             <div className="game-img">
@@ -14,17 +15,21 @@ const GameCard = () => {
                     <FontAwesomeIcon icon={faWindows} />
                 </div>
                 <div className="name">
-                    Have a Nice Death
+                    {data.name}
                 </div>
                 <div className="rating">
                     <FontAwesomeIcon icon={faFaceGrinHearts} />
                 </div>
                 <div className="follow">
-                    +315
+                    +{data.added}
                 </div>
             </div>
         </div>
     )
+}
+
+GameCard.propTypes = {
+    data: PropTypes.object
 }
 
 export default GameCard;
