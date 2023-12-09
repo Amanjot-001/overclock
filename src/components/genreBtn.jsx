@@ -8,7 +8,7 @@ const GenreBtn = ({ icon, title }) => {
             <div className="genre-image">
                 <img src={genreImage} alt="game-icon" />
             </div>
-            <div className="title">
+            <div className="genre-title">
                 {title}
             </div>
         </div>

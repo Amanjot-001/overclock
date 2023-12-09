@@ -6,10 +6,10 @@ const Navbtn = ({icon, title}) => {
     const iconName = getIcon(icon);
     return (
         <div className="navBtn">
-            <div className="image">
+            <div className="navBtn-image">
                 <FontAwesomeIcon icon={iconName} />
             </div>
-            <div className="title">
+            <div className="navBtn-title">
                 {title}
             </div>
         </div>

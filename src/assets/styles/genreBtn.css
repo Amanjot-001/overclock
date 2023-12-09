@@ -18,6 +18,7 @@ img {
     background-size: cover;
 }
 
-.title {
+.genre-title {
     font-weight: 400;
+    cursor: pointer;
 }

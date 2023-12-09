@@ -5,7 +5,7 @@
     font-size: 1.1rem;  
 }
 
-.image {
+.navBtn-image {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 0.3rem ;
     border-radius: 5px;
@@ -15,6 +15,7 @@
     align-items: center;
 }
 
-.title {
+.navBtn-title {
     font-weight: 400;
+    cursor: pointer;
 }

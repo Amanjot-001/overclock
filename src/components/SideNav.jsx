@@ -12,7 +12,7 @@ const SideNav = () => {
                 Reviews
             </div>
             <div className="profile">
-                Amanjot
+                <p>Amanjot</p>
                 <div className="user-initial">A</div>
             </div>
             <div className="user-list">
