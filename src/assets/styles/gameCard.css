@@ -14,10 +14,10 @@
     flex-grow: 1;
 }
 
-img {
+/* img {
     height: 100%;
-    
-}
+    width: 100%;
+} */
 
 .content {
     display: flex;
@@ -38,4 +38,11 @@ img {
     gap: 0.5rem;
     font-size: 1.2rem;
     font-weight: 800;
+}
+
+.switch-icon {
+    height: 1rem;
+    width: 1rem;
+    display: flex;
+    
 }

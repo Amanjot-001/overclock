@@ -1,10 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindows, faPlaystation, faXbox, faApple, faAndroid } from '@fortawesome/free-brands-svg-icons';
 import { faFaceGrinHearts } from '@fortawesome/free-solid-svg-icons';
+import nintendo from '../assets/images/switch-icon.png';
 import PropTypes from 'prop-types'
+import { useMemo } from 'react';
 import '../assets/styles/gameCard.css'
 
 const GameCard = ({ data }) => {
+    const nintendoIcon = useMemo(() => <img className='switch-icon' src={nintendo} alt="Nintendo Switch" />, []);
     const getPlatformIcon = (platformName) => {
         switch (platformName) {
             case 'pc':
@@ -13,10 +16,12 @@ const GameCard = ({ data }) => {
                 return faPlaystation;
             case 'xbox':
                 return faXbox;
-            case 'apple macintosh':
+            case 'mac':
                 return faApple;
             case 'android':
                 return faAndroid;
+            case 'nintendo':
+                return nintendoIcon;
             default:
                 return null;
         }
@@ -31,7 +36,11 @@ const GameCard = ({ data }) => {
                 <div className="platform">
                     {data.parent_platforms.map((platform) => {
                         const icon = getPlatformIcon(platform.platform.slug);
-                        return icon && <span key={platform.platform.id}><FontAwesomeIcon icon={icon} /></span>;
+                        return icon !== null ? (
+                            <span key={platform.platform.id}>
+                                {icon === nintendoIcon ? nintendoIcon : <FontAwesomeIcon icon={icon} />}
+                            </span>
+                        ) : null;
                     })}
                 </div>
                 <div className="name">

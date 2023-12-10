@@ -18,4 +18,5 @@
 .navBtn-title {
     font-weight: 400;
     cursor: pointer;
+    white-space: nowrap;
 }
