@@ -2,21 +2,32 @@
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    font-size: 1.1rem;  
+    font-size: 1.1rem;
 }
 
 .navBtn-image {
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 0.3rem ;
+    padding: 0.3rem;
     border-radius: 5px;
     width: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navBtn-image:hover {
+    background-color: #fff;
+    color: #000;
 }
 
 .navBtn-title {
     font-weight: 400;
     cursor: pointer;
     white-space: nowrap;
+}
+
+.navBtn:hover .navBtn-image {
+    background-color: #fff;
+    color: #000;
 }

@@ -11,6 +11,16 @@
     font-weight: 700;
 }
 
+.links {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.active .navBtn-image{
+    background-color: #fff;
+    color: #000;
+}
+
 .profile {
     display: flex;
     gap: 0.5rem;
