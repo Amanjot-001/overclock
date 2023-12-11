@@ -7,7 +7,6 @@ import SideNav from './components/SideNav'
 import Display from './components/display'
 import Last30Days from './components/Last30Days'
 import './index.css'
-import '../src/assets/styles/app.css'
 
 const App = () => {
   return (
