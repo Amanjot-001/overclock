@@ -1,13 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindows, faPlaystation, faXbox, faApple, faAndroid } from '@fortawesome/free-brands-svg-icons';
-import { faFaceGrinHearts } from '@fortawesome/free-solid-svg-icons';
 import nintendo from '../assets/images/switch-icon.png';
+import getRatingIcon from '../utils/ratingIcon';
+// import getPlatformIcon from '../utils/platformIcon';
 import PropTypes from 'prop-types'
 import { useMemo } from 'react';
 import '../assets/styles/gameCard.css'
 
 const GameCard = ({ data }) => {
-    const nintendoIcon = useMemo(() => <img className='switch-icon' src={nintendo} alt="Nintendo Switch" />, []);
+    const rating = getRatingIcon(data.ratings[0].title);
     const getPlatformIcon = (platformName) => {
         switch (platformName) {
             case 'pc':
@@ -26,6 +27,8 @@ const GameCard = ({ data }) => {
                 return null;
         }
     };
+
+    const nintendoIcon = useMemo(() => <img className='switch-icon' src={nintendo} alt="Nintendo Switch" />, []);
 
     return (
         <div className="game-card">
@@ -47,7 +50,7 @@ const GameCard = ({ data }) => {
                     {data.name}
                 </div>
                 <div className="rating">
-                    <FontAwesomeIcon icon={faFaceGrinHearts} />
+                    <img className='rating-icon' src={rating} alt="rating-icon" />
                 </div>
                 <div className="follow">
                     +{data.added}

@@ -1,6 +1,6 @@
 import '../assets/styles/navBtn.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { getIcon } from '../utils/icons';
+import getIcon from '../utils/icons';
 
 const Navbtn = ({icon, title}) => {
     const iconName = getIcon(icon);

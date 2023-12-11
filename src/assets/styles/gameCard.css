@@ -46,3 +46,10 @@
     display: flex;
     
 }
+
+.rating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+}
