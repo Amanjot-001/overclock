@@ -20,6 +20,8 @@ const Display = () => {
         fetchData();
     }, [])
 
+    console.log(Date())
+
     return (
         <div className="display">
             <h1>Top Picks</h1>
