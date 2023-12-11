@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { useParams } from 'react-router-dom'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import Header from './components/Header'
 import SideNav from './components/SideNav'
@@ -20,12 +19,6 @@ const App = () => {
   )
 }
 
-const FilteredCardWrapper = () => {
-  const { timeFrame } = useParams();
-
-  return <FilteredCard api_name={timeFrame} />;
-};
-
 const appRouter = createBrowserRouter([
   {
     path: '/',
@@ -37,16 +30,8 @@ const appRouter = createBrowserRouter([
       },
       {
         path: '/discover/:timeFrame',
-        element: <FilteredCardWrapper />
-      },
-      // {
-      //   path: '/discover/this-week',
-      //   element: <FilteredCard />
-      // },
-      // {
-      //   path: '/discover/next-week',
-      //   element: <FilteredCard />
-      // }
+        element: <FilteredCard />
+      }
     ]
   }
 ])

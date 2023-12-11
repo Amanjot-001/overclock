@@ -4,11 +4,11 @@ import '../assets/styles/filteredCard.css'
 import GameCard from './GameCard';
 import useDisplay from '../utils/useDisplay';
 
-const FilteredCard = ({api_name}) => {
+const FilteredCard = () => {
     const [data, setData] = useState(null);
     const { timeFrame } = useParams();
     
-    const API_TO_USE = useDisplay(api_name);
+    const API_TO_USE = useDisplay(timeFrame);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -22,7 +22,7 @@ const FilteredCard = ({api_name}) => {
         };
 
         fetchData();
-    }, [])
+    }, [API_TO_USE])
 
     return (
         <div className="display">
