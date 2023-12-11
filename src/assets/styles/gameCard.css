@@ -1,7 +1,7 @@
 .game-card {
     display: flex;
     flex-direction: column;
-    width: 15rem;
+    width: 20rem;
     height: max-content;
     border-radius: 20px;
     overflow: hidden;

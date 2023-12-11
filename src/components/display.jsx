@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../assets/styles/display.css'
 import GameCard from './GameCard';
+import { GAMES_API } from '../utils/constants';
 
 const Display = () => {
     const [data, setData] = useState(null);
@@ -8,7 +9,7 @@ const Display = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://api.rawg.io/api/games?key=9de23704b3a346208aef52090b3b4c60&page=1');
+                const response = await fetch(GAMES_API);
                 const res = await response.json();
                 setData(res);
             } catch (error) {
