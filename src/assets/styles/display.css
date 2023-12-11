@@ -31,3 +31,7 @@
 .games::-webkit-scrollbar-track {
     background-color: transparent;
 }
+
+.no-content-heading {
+    color: #fff;
+}

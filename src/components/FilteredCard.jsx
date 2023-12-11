@@ -7,7 +7,7 @@ import useDisplay from '../utils/useDisplay';
 const FilteredCard = () => {
     const [data, setData] = useState(null);
     const { timeFrame } = useParams();
-    
+
     const API_TO_USE = useDisplay(timeFrame);
 
     useEffect(() => {
@@ -29,8 +29,11 @@ const FilteredCard = () => {
             <h1>{timeFrame}</h1>
             {data ? (
                 <div className="games">
-                    {Array.isArray(data.results) &&
-                        data.results.map((game) => <GameCard key={game.id} data={game} />)}
+                    {Array.isArray(data.results) && data.results.length > 0 ? (
+                        data.results.map((game) => <GameCard key={game.id} data={game} />)
+                    ) : (
+                        <h1>No content available</h1>
+                    )}
                 </div>
             ) : (
                 <p>Loading...</p>

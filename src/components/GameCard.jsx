@@ -33,40 +33,46 @@ const GameCard = ({ data }) => {
 
     return (
         <div className="game-card">
-            <div className="game-img">
-                <img src={data.background_image} alt="" />
-            </div>
-            <div className="content">
-                <div className="top-sec">
-                    <div className="platform">
-                        {data.parent_platforms.map((platform) => {
-                            const icon = getPlatformIcon(platform.platform.slug);
-                            return icon !== null ? (
-                                <span key={platform.platform.id}>
-                                    {icon === nintendoIcon ? nintendoIcon : <FontAwesomeIcon icon={icon} />}
-                                </span>
-                            ) : null;
-                        })}
+            {data ? (
+                <>
+                    <div className="game-img">
+                        <img src={data.background_image} alt="" />
                     </div>
-                    <div className="meta-rating">
-                        {metaRating}
+                    <div className="content">
+                        <div className="top-sec">
+                            <div className="platform">
+                                {data.parent_platforms.map((platform) => {
+                                    const icon = getPlatformIcon(platform.platform.slug);
+                                    return icon !== null ? (
+                                        <span key={platform.platform.id}>
+                                            {icon === nintendoIcon ? nintendoIcon : <FontAwesomeIcon icon={icon} />}
+                                        </span>
+                                    ) : null;
+                                })}
+                            </div>
+                            <div className="meta-rating">
+                                {metaRating}
+                            </div>
+                        </div>
+                        <div className="name">
+                            {data.name}
+                        </div>
+                        <div className="rating">
+                            <img className='rating-icon' src={rating} alt="rating-icon" />
+                        </div>
+                        <div className="down-sec">
+                            <div className="follow">
+                                +{data.added}
+                            </div>
+                            <div className="add-btn">
+                                Add
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div className="name">
-                    {data.name}
-                </div>
-                <div className="rating">
-                    <img className='rating-icon' src={rating} alt="rating-icon" />
-                </div>
-                <div className="down-sec">
-                    <div className="follow">
-                        +{data.added}
-                    </div>
-                    <div className="add-btn">
-                        Add
-                    </div>
-                </div>
-            </div>
+                </>
+            ) : (
+                <h1 className='no-content-heading'>No content available</h1>
+            )}
         </div>
     )
 }
