@@ -36,7 +36,7 @@ const SideNav = () => {
                     <Navbtn icon={'faStar'} title={'Last 30 days'} />
                 </NavLink>
                 <NavLink className='links' to="/discover/this-week">
-                    <Navbtn icon={'faFire'} title={'this week'} />
+                    <Navbtn icon={'faFire'} title={'This week'} />
                 </NavLink>
                 <NavLink className='links' to="/discover/next-week">
                     <Navbtn icon={'faForwardFast'} title={'Next week'} />
