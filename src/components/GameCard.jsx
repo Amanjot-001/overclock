@@ -9,6 +9,7 @@ import '../assets/styles/gameCard.css'
 
 const GameCard = ({ data }) => {
     const rating = getRatingIcon(data.ratings[0].title);
+    const metaRating = data.metacritic;
     const getPlatformIcon = (platformName) => {
         switch (platformName) {
             case 'pc':
@@ -36,15 +37,20 @@ const GameCard = ({ data }) => {
                 <img src={data.background_image} alt="" />
             </div>
             <div className="content">
-                <div className="platform">
-                    {data.parent_platforms.map((platform) => {
-                        const icon = getPlatformIcon(platform.platform.slug);
-                        return icon !== null ? (
-                            <span key={platform.platform.id}>
-                                {icon === nintendoIcon ? nintendoIcon : <FontAwesomeIcon icon={icon} />}
-                            </span>
-                        ) : null;
-                    })}
+                <div className="top-sec">
+                    <div className="platform">
+                        {data.parent_platforms.map((platform) => {
+                            const icon = getPlatformIcon(platform.platform.slug);
+                            return icon !== null ? (
+                                <span key={platform.platform.id}>
+                                    {icon === nintendoIcon ? nintendoIcon : <FontAwesomeIcon icon={icon} />}
+                                </span>
+                            ) : null;
+                        })}
+                    </div>
+                    <div className="meta-rating">
+                        {metaRating}
+                    </div>
                 </div>
                 <div className="name">
                     {data.name}
@@ -52,8 +58,13 @@ const GameCard = ({ data }) => {
                 <div className="rating">
                     <img className='rating-icon' src={rating} alt="rating-icon" />
                 </div>
-                <div className="follow">
-                    +{data.added}
+                <div className="down-sec">
+                    <div className="follow">
+                        +{data.added}
+                    </div>
+                    <div className="add-btn">
+                        Add
+                    </div>
                 </div>
             </div>
         </div>
