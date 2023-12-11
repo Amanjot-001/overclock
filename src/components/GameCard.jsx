@@ -8,7 +8,7 @@ import { useMemo } from 'react';
 import '../assets/styles/gameCard.css'
 
 const GameCard = ({ data }) => {
-    const rating = getRatingIcon(data.ratings[0].title);
+    const rating = getRatingIcon(data.ratings[0]?.title);
     const metaRating = data.metacritic;
     const getPlatformIcon = (platformName) => {
         switch (platformName) {

@@ -1,15 +1,18 @@
-import { useEffect, useState } from 'react';
-import '../assets/styles/display.css'
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import '../assets/styles/filteredCard.css'
+import { LAST_30_DAYS_API } from '../utils/constants';
 import GameCard from './GameCard';
-import { GAMES_API } from '../utils/constants';
 
-const Display = () => {
+const FilteredCard = ({api_name}) => {
     const [data, setData] = useState(null);
+    const obj = useParams();
+    console.log(obj)
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(GAMES_API);
+                const response = await fetch(LAST_30_DAYS_API);
                 const res = await response.json();
                 setData(res);
             } catch (error) {
@@ -35,4 +38,4 @@ const Display = () => {
     )
 }
 
-export default Display;
+export default FilteredCard;

@@ -1,11 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
-// import App from './components/App'
 import Header from './components/Header'
 import SideNav from './components/SideNav'
 import Display from './components/display'
-import Last30Days from './components/Last30Days'
+import FilteredCard from './components/FilteredCard'
 import './index.css'
 
 const App = () => {
@@ -31,7 +30,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: '/discover/last-30-days',
-        element: <Last30Days />
+        element: <FilteredCard />
       }
     ]
   }
