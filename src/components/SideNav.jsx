@@ -6,19 +6,29 @@ import { Link } from 'react-router-dom';
 const SideNav = () => {
     return (
         <div className="sideNav">
-            <div className="home">
-                Home
-            </div>
-            <div className="reviews">
-                Reviews
-            </div>
-            <div className="profile">
-                <p>Amanjot</p>
-                <div className="user-initial">A</div>
-            </div>
+            <Link className='links' to="/">
+                <div className="home">
+                    Home
+                </div>
+            </Link>
+            <Link className='links' to="/reviews">
+                <div className="reviews">
+                    Reviews
+                </div>
+            </Link>
+            <Link className='links' to="/profile">
+                <div className="profile">
+                    <p>Amanjot</p>
+                    <div className="user-initial">A</div>
+                </div>
+            </Link>
             <div className="user-list">
-                <Navbtn icon={'faGift'} title={'Wishlist'} />
-                <Navbtn icon={'faLayerGroup'} title={'My library'} />
+                <Link className='links' to="/discover/wishlist">
+                    <Navbtn icon={'faGift'} title={'Wishlist'} />
+                </Link>
+                <Link className='links' to="/my-library">
+                    <Navbtn icon={'faLayerGroup'} title={'My library'} />
+                </Link>
             </div>
             <div className="new-releases">
                 <p>New Releases</p>
@@ -47,21 +57,45 @@ const SideNav = () => {
             </div>
             <div className="platforms">
                 <p>Platforms</p>
-                <Navbtn icon={'faWindows'} title={'PC'} />
-                <Navbtn icon={'faPlaystation'} title={'PlayStation'} />
-                <Navbtn icon={'faXbox'} title={'Xbox One'} />
-                <Navbtn icon={'faApple'} title={'ios'} />
-                <Navbtn icon={'faAndroid'} title={'Android'} />
+                <Link className='links' to="/games/pc">
+                    <Navbtn icon={'faWindows'} title={'PC'} />
+                </Link>
+                <Link className='links' to="/games/playstation">
+                    <Navbtn icon={'faPlaystation'} title={'PlayStation'} />
+                </Link>
+                <Link className='links' to="/games/xbox">
+                    <Navbtn icon={'faXbox'} title={'Xbox One'} />
+                </Link>
+                <Link className='links' to="/games/ios">
+                    <Navbtn icon={'faApple'} title={'ios'} />
+                </Link>
+                <Link className='links' to="/games/android">
+                    <Navbtn icon={'faAndroid'} title={'Android'} />
+                </Link>
             </div>
             <div className="genres">
                 <p>Genres</p>
-                <GenreBtn icon={'action'} title={'Action'} />
-                <GenreBtn icon={'stratedy'} title={'Stratedy'} />
-                <GenreBtn icon={'rpg'} title={'RPG'} />
-                <GenreBtn icon={'shooter'} title={'adventure'} />
-                <GenreBtn icon={'puzzle'} title={'Puzzle'} />
-                <GenreBtn icon={'racing'} title={'Racing'} />
-                <GenreBtn icon={'sports'} title={'Sports'} />
+                <Link className='links' to="/games/action">
+                    <GenreBtn icon={'action'} title={'Action'} />
+                </Link>
+                <Link className='links' to="/games/stratedy">
+                    <GenreBtn icon={'stratedy'} title={'Stratedy'} />
+                </Link>
+                <Link className='links' to="/games/rps">
+                    <GenreBtn icon={'rpg'} title={'RPG'} />
+                </Link>
+                <Link className='links' to="/games/adventure">
+                    <GenreBtn icon={'shooter'} title={'Adventure'} />
+                </Link>
+                <Link className='links' to="/games/puzzle">
+                    <GenreBtn icon={'puzzle'} title={'Puzzle'} />
+                </Link>
+                <Link className='links' to="/games/racing">
+                    <GenreBtn icon={'racing'} title={'Racing'} />
+                </Link>
+                <Link className='links' to="/games/sports">
+                    <GenreBtn icon={'sports'} title={'Sports'} />
+                </Link>
             </div>
         </div>
     )
