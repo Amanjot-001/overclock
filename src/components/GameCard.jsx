@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindows, faPlaystation, faXbox, faApple, faAndroid, faAppStoreIos } from '@fortawesome/free-brands-svg-icons';
+import { faCartShopping, faGift } from '@fortawesome/free-solid-svg-icons';
 import nintendo from '../assets/images/switch-icon.png';
 import getRatingIcon from '../utils/ratingIcon';
 // import getPlatformIcon from '../utils/platformIcon';
@@ -59,15 +60,20 @@ const GameCard = ({ data }) => {
                         <div className="name">
                             {data.name}
                         </div>
-                        <div className="rating">
-                            <img className='rating-icon' src={rating} alt="rating-icon" />
+                        <div className="mid-sec">
+                            <div className="rating">
+                                <img className='rating-icon' src={rating} alt="rating-icon" />
+                            </div>
+                            <div className="wishlist-btn">
+                                wishlist <FontAwesomeIcon className='wishlist-icon' icon={faGift} />
+                            </div>
                         </div>
                         <div className="down-sec">
                             <div className="follow">
                                 +{data.added}
                             </div>
                             <div className="add-btn">
-                                Add
+                                Add <FontAwesomeIcon className='cart-icon' icon={faCartShopping} />
                             </div>
                         </div>
                     </div>

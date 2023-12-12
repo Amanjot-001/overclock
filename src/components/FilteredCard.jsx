@@ -26,7 +26,7 @@ const FilteredCard = () => {
 
     return (
         <div className="display">
-            <h1>{timeFrame}</h1>
+            <h1 className='display-heading'>{timeFrame}</h1>
             {data ? (
                 <div className="games">
                     {Array.isArray(data.results) && data.results.length > 0 ? (

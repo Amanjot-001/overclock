@@ -88,6 +88,10 @@
 }
 
 .add-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
     color: #6dc849;
     border: 1px solid #6dc849;
     padding: 0.2rem 0.5rem;
@@ -96,13 +100,42 @@
     font-size: 1.3rem;
     font-weight: 800;
     transition: box-shadow 0.3s ease;
-
 }
 
-.add-btn:hover {
+.add-btn:hover, .wishlist-btn:hover {
     box-shadow: 0 0 10px rgba(109, 200, 73, 0.7);
 }
 
 .no-content-heading {
     color: #fff;
+}
+
+.cart-icon {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.mid-sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wishlist-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    color: #6dc849;
+    border: 1px solid #6dc849;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+.wishlist-icon {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.7rem;
 }
