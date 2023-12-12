@@ -9,12 +9,15 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
     const getPageNumbers = () => {
         const pages = [];
-        const range = 3;
+        const range = 2;
 
         let showEllipsisStart = true;
         let showEllipsisEnd = true;
 
-        for (let i = 1; i <= totalPages; i++) {
+        pages.push(1);
+        showEllipsisStart = false;
+
+        for (let i = 2; i < totalPages; i++) {
             if (i === currentPage || i >= currentPage - range && i <= currentPage + range) {
                 pages.push(i);
                 showEllipsisStart = true;
@@ -24,6 +27,9 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
                 showEllipsisEnd = false;
             }
         }
+
+        pages.push(totalPages);
+        showEllipsisEnd = false;
 
         return pages;
     };
@@ -38,6 +44,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
                     key={index}
                     onClick={() => handlePageChange(page)}
                     className={`page-btn ${page === currentPage ? 'active-page' : ''}`}
+                    disabled={page === null}
                 >
                     {page !== null ? page : '...'}
                 </button>
