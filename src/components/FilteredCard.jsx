@@ -4,6 +4,7 @@ import '../assets/styles/filteredCard.css'
 import GameCard from './GameCard';
 import useFilteredCard from '../utils/useFilteredCard';
 import Pagination from './Pagination';
+import Shimmer from './Shimmer';
 
 const FilteredCard = () => {
     const [data, setData] = useState(null);
@@ -11,6 +12,10 @@ const FilteredCard = () => {
     const { timeFrame } = useParams();
 
     const API_TO_USE = useFilteredCard(timeFrame);
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [timeFrame]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -26,7 +31,7 @@ const FilteredCard = () => {
         fetchData();
 
         return () => {
-            setCurrentPage(1);
+            // setCurrentPage(1);
             setData(null);
         }
     }, [API_TO_USE, currentPage, timeFrame])
@@ -47,7 +52,7 @@ const FilteredCard = () => {
                     )}
                 </div>
             ) : (
-                <p>Loading...</p>
+                <Shimmer />
             )}
 
             {data && data.count > 40 && (
