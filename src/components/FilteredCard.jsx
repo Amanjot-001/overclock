@@ -55,8 +55,8 @@ const FilteredCard = () => {
                 <Shimmer />
             )}
 
-            {data && data.count > 40 && (
-                <Pagination currentPage={currentPage} totalPages={Math.ceil(data.count / 40)} onPageChange={handlePageChange} />
+            {data && data.count > 40 && (   
+                <Pagination currentPage={currentPage} totalPages={Math.floor(data.count / 40)} onPageChange={handlePageChange} />
             )}
         </div>
     )

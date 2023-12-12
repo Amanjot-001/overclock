@@ -20,7 +20,7 @@ const Display = () => {
         };
 
         fetchData();
-    }, [currentPage, data])
+    }, [currentPage])
 
     const handlePageChange = (newPage) => {
         setCurrentPage(newPage);
