@@ -15,7 +15,7 @@ const FilteredCard = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(API_TO_USE);
+                const response = await fetch(`${API_TO_USE}&page=${currentPage}&page_size=40`);
                 const res = await response.json();
                 setData(res);
             } catch (error) {
@@ -24,7 +24,12 @@ const FilteredCard = () => {
         };
 
         fetchData();
-    }, [API_TO_USE, currentPage])
+
+        return () => {
+            setCurrentPage(1);
+            setData(null);
+        }
+    }, [API_TO_USE, currentPage, timeFrame])
 
     const handlePageChange = (newPage) => {
         setCurrentPage(newPage);
