@@ -20,6 +20,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
                 showEllipsisStart = true;
             } else if (showEllipsisStart || showEllipsisEnd) {
                 pages.push(null);
+                showEllipsisStart = false;
                 showEllipsisEnd = false;
             }
         }
@@ -36,7 +37,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
                 <button
                     key={index}
                     onClick={() => handlePageChange(page)}
-                    className={page === currentPage ? 'active' : ''}
+                    className={`page-btn ${page === currentPage ? 'active-page' : ''}`}
                 >
                     {page !== null ? page : '...'}
                 </button>
