@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWindows, faPlaystation, faXbox, faApple, faAndroid } from '@fortawesome/free-brands-svg-icons';
+import { faWindows, faPlaystation, faXbox, faApple, faAndroid, faAppStoreIos } from '@fortawesome/free-brands-svg-icons';
 import nintendo from '../assets/images/switch-icon.png';
 import getRatingIcon from '../utils/ratingIcon';
 // import getPlatformIcon from '../utils/platformIcon';
@@ -20,6 +20,8 @@ const GameCard = ({ data }) => {
                 return faXbox;
             case 'mac':
                 return faApple;
+            case 'ios':
+                return faAppStoreIos;
             case 'android':
                 return faAndroid;
             case 'nintendo':

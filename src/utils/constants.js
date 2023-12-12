@@ -35,3 +35,14 @@ const endDateNextWeekString = endDateNextWeek.toISOString().split('T')[0];
 export const LAST_30_DAYS_API = `https://api.rawg.io/api/games?key=9de23704b3a346208aef52090b3b4c60&dates=${startDateLast30DaysString},${endDateLast30Days}&page=1&page_size=40`;
 export const THIS_WEEK_API = `https://api.rawg.io/api/games?key=9de23704b3a346208aef52090b3b4c60&dates=${startDateThisWeekString},${endDateThisWeekString}&page=1&page_size=40`;
 export const NEXT_WEEK_API = `https://api.rawg.io/api/games?key=9de23704b3a346208aef52090b3b4c60&dates=${startDateNextWeekString},${endDateNextWeekString}&page=1&page_size=40`;
+
+export const BEST_OF_THE_YEAR_API = `https://api.rawg.io/api/games?key=9de23704b3a346208aef52090b3b4c60&dates=2023-01-01,2023-12-31&ordering=-rating&page=1&page_size=40`;
+export const POPULAR_IN_2022_API = `https://api.rawg.io/api/games?key=9de23704b3a346208aef52090b3b4c60&dates=2022-01-01,2022-12-31&ordering=-rating&page=1&page_size=40`;
+export const ALL_TIME_TOP_API = `https://api.rawg.io/api/games?key=9de23704b3a346208aef52090b3b4c60&ordering=-rating&page=1&page_size=40`;
+
+
+const getPlatform = () => {
+    
+}
+
+export const PLATFORM_API = `https://api.rawg.io/api/games?key=9de23704b3a346208aef52090b3b4c60&parent_platforms=${platformNumber}&page=1&page_size=40`
