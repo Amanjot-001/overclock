@@ -1,10 +1,10 @@
 import '../assets/styles/navBtn.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import getIcon from '../utils/icons';
+import useNavBtn from '../utils/useNavBtn';
 import nintendo from '../assets/images/switch-icon.png';
 
 const Navbtn = ({ icon, title }) => {
-    const iconName = getIcon(icon);
+    const iconName = useNavBtn(icon);
     return (
         <div className="navBtn">
             <div className="navBtn-image">

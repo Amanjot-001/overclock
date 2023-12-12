@@ -1,6 +1,6 @@
 import { LAST_30_DAYS_API, THIS_WEEK_API, NEXT_WEEK_API, BEST_OF_THE_YEAR_API, POPULAR_IN_2022_API, ALL_TIME_TOP_API, PLATFORM_API, GENRES_API } from "./constants";
 
-const useDisplay = (text) => {
+const useFilteredCard = (text) => {
     switch(text) {
         case 'last-30-days':
             return LAST_30_DAYS_API;
@@ -47,4 +47,4 @@ const useDisplay = (text) => {
     }
 } 
 
-export default useDisplay;
+export default useFilteredCard;

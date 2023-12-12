@@ -1,8 +1,8 @@
 import '../assets/styles/genreBtn.css'
-import getGenreIcon from '../utils/genreIcon';
+import useGenreBtn from '../utils/useGenreBtn';
 
 const GenreBtn = ({ icon, title }) => {
-    const genreImage = getGenreIcon(icon);
+    const genreImage = useGenreBtn(icon);
     return (
         <div className="genreBtn">
             <div className="genre-image">

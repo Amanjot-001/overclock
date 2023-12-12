@@ -6,7 +6,7 @@ import racing from '../assets/images/genres/racing.png';
 import puzzle from '../assets/images/genres/puzzle.png';
 import shooter from '../assets/images/genres/shooter.png';
 
-export const getGenreIcon = (icon) => {
+export const useGenreBtn = (icon) => {
     switch(icon) {
         case 'action':
             return action;
@@ -25,4 +25,4 @@ export const getGenreIcon = (icon) => {
     }
 }
 
-export default getGenreIcon;
+export default useGenreBtn;

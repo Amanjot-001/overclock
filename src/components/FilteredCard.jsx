@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import '../assets/styles/filteredCard.css'
 import GameCard from './GameCard';
-import useDisplay from '../utils/useDisplay';
+import useFilteredCard from '../utils/useFilteredCard';
 import Pagination from './Pagination';
 
 const FilteredCard = () => {
@@ -10,7 +10,7 @@ const FilteredCard = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const { timeFrame } = useParams();
 
-    const API_TO_USE = useDisplay(timeFrame);
+    const API_TO_USE = useFilteredCard(timeFrame);
 
     useEffect(() => {
         const fetchData = async () => {
