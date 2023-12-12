@@ -22,7 +22,7 @@ const Display = () => {
 
     return (
         <div className="display">
-            <h1>Top Picks</h1>
+            <h1>All Games</h1>
             {data ? (
                 <div className="games">
                     {Array.isArray(data.results) &&

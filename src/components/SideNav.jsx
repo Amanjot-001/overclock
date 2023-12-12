@@ -1,6 +1,6 @@
 import '../assets/styles/sideNav.css'
 import Navbtn from './NavBtn';
-import GenreBtn from './genreBtn';
+import GenreBtn from './GenreBtn';
 import { NavLink } from 'react-router-dom';
 
 const SideNav = () => {

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import Header from './components/Header'
 import SideNav from './components/SideNav'
-import Display from './components/display'
+import Display from './components/Display'
 import FilteredCard from './components/FilteredCard'
 import './index.css'
 
