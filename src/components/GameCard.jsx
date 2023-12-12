@@ -53,9 +53,13 @@ const GameCard = ({ data }) => {
                                     ) : null;
                                 })}
                             </div>
-                            <div className="meta-rating">
-                                {metaRating}
-                            </div>
+                            {metaRating ?
+                                <div className="meta-rating">
+                                    {metaRating}
+                                </div>
+                                :
+                                null
+                            }
                         </div>
                         <div className="name">
                             {data.name}
