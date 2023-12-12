@@ -3,9 +3,11 @@ import { useParams } from 'react-router-dom';
 import '../assets/styles/filteredCard.css'
 import GameCard from './GameCard';
 import useDisplay from '../utils/useDisplay';
+import Pagination from './Pagination';
 
 const FilteredCard = () => {
     const [data, setData] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1);
     const { timeFrame } = useParams();
 
     const API_TO_USE = useDisplay(timeFrame);
@@ -22,7 +24,11 @@ const FilteredCard = () => {
         };
 
         fetchData();
-    }, [API_TO_USE])
+    }, [API_TO_USE, currentPage])
+
+    const handlePageChange = (newPage) => {
+        setCurrentPage(newPage);
+    };
 
     return (
         <div className="display">
@@ -37,6 +43,10 @@ const FilteredCard = () => {
                 </div>
             ) : (
                 <p>Loading...</p>
+            )}
+
+            {data && data.count > 40 && (
+                <Pagination currentPage={currentPage} totalPages={Math.ceil(data.count / 40)} onPageChange={handlePageChange} />
             )}
         </div>
     )
