@@ -1,4 +1,4 @@
-import { LAST_30_DAYS_API, THIS_WEEK_API, NEXT_WEEK_API, BEST_OF_THE_YEAR_API, POPULAR_IN_2022_API, ALL_TIME_TOP_API, PLATFORM_API } from "./constants";
+import { LAST_30_DAYS_API, THIS_WEEK_API, NEXT_WEEK_API, BEST_OF_THE_YEAR_API, POPULAR_IN_2022_API, ALL_TIME_TOP_API, PLATFORM_API, GENRES_API } from "./constants";
 
 const useDisplay = (text) => {
     switch(text) {
@@ -28,6 +28,20 @@ const useDisplay = (text) => {
             return PLATFORM_API(8);
         case 'nintendo':
             return PLATFORM_API(7);
+        case 'action':
+            return GENRES_API('action');
+        case 'strategy':
+            return GENRES_API('strategy');
+        case 'rpg':
+            return GENRES_API('role-playing-games-rpg');
+        case 'adventure':
+            return GENRES_API('adventure');
+        case 'puzzle':
+            return GENRES_API('puzzle');
+        case 'racing':
+            return GENRES_API('racing');
+        case 'sports':
+            return GENRES_API('sports');
         default:
             return null;
     }

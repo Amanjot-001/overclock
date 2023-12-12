@@ -84,10 +84,10 @@ const SideNav = () => {
                 <NavLink className='links' to="/games/action">
                     <GenreBtn icon={'action'} title={'Action'} />
                 </NavLink>
-                <NavLink className='links' to="/games/stratedy">
-                    <GenreBtn icon={'stratedy'} title={'Stratedy'} />
+                <NavLink className='links' to="/games/strategy">
+                    <GenreBtn icon={'stratedy'} title={'Strategy'} />
                 </NavLink>
-                <NavLink className='links' to="/games/rps">
+                <NavLink className='links' to="/games/rpg">
                     <GenreBtn icon={'rpg'} title={'RPG'} />
                 </NavLink>
                 <NavLink className='links' to="/games/adventure">

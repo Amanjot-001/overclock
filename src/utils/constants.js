@@ -44,3 +44,7 @@ export const ALL_TIME_TOP_API = `https://api.rawg.io/api/games?key=9de23704b3a34
 export const PLATFORM_API = (platformNumber) => {
     return `https://api.rawg.io/api/games?key=9de23704b3a346208aef52090b3b4c60&parent_platforms=${platformNumber}&page=1&page_size=40`;
 }
+
+export const GENRES_API = (genreName) => {
+    return `https://api.rawg.io/api/games?key=9de23704b3a346208aef52090b3b4c60&genres=${genreName}&page=1&page_size=40`;
+}
