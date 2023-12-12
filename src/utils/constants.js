@@ -41,8 +41,6 @@ export const POPULAR_IN_2022_API = `https://api.rawg.io/api/games?key=9de23704b3
 export const ALL_TIME_TOP_API = `https://api.rawg.io/api/games?key=9de23704b3a346208aef52090b3b4c60&ordering=-rating&page=1&page_size=40`;
 
 
-// const getPlatform = () => {
-
-// }
-
-// export const PLATFORM_API = `https://api.rawg.io/api/games?key=9de23704b3a346208aef52090b3b4c60&parent_platforms=${platformNumber}&page=1&page_size=40`
+export const PLATFORM_API = (platformNumber) => {
+    return `https://api.rawg.io/api/games?key=9de23704b3a346208aef52090b3b4c60&parent_platforms=${platformNumber}&page=1&page_size=40`;
+}

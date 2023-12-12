@@ -21,6 +21,10 @@ a.active .navBtn-image{
     color: #000;
 }
 
+a.active .navBtn-image .nintendo-icon {
+    filter: brightness(0%);
+}
+
 .profile {
     display: flex;
     gap: 0.5rem;

@@ -13,12 +13,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    filter: brightness(100%);
+    transition: background-color 0.3s ease, color 0.3s ease, filter 0.3s ease;
 }
 
 .navBtn-image:hover {
     background-color: #fff;
     color: #000;
+}
+
+.nintendo-icon {
+    filter: brightness(100%);
+    transition: filter 0.3s ease;
+}
+
+.navBtn:hover .nintendo-icon {
+    filter: brightness(0%);
 }
 
 .navBtn-title {

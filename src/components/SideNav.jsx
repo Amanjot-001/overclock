@@ -66,8 +66,14 @@ const SideNav = () => {
                 <NavLink className='links' to="/games/xbox">
                     <Navbtn icon={'faXbox'} title={'Xbox One'} />
                 </NavLink>
+                <NavLink className='links' to="/games/mac">
+                    <Navbtn icon={'faApple'} title={'mac'} />
+                </NavLink>
+                <NavLink className='links' to="/games/nintendo">
+                    <Navbtn icon={'nintendo'} title={'Nintendo'} />
+                </NavLink>
                 <NavLink className='links' to="/games/ios">
-                    <Navbtn icon={'faApple'} title={'ios'} />
+                    <Navbtn icon={'faAppStoreIos'} title={'ios'} />
                 </NavLink>
                 <NavLink className='links' to="/games/android">
                     <Navbtn icon={'faAndroid'} title={'Android'} />

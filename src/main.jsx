@@ -31,6 +31,10 @@ const appRouter = createBrowserRouter([
       {
         path: '/discover/:timeFrame',
         element: <FilteredCard />
+      },
+      {
+        path: '/games/:timeFrame',
+        element: <FilteredCard />
       }
     ]
   }
