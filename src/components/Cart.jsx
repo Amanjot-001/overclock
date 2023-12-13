@@ -56,14 +56,12 @@ const Cart = () => {
                                     +{data.added}
                                 </div>
                                 <div className="item-remove-btn">
-                                    Remove <FontAwesomeIcon className='cart-icon' icon={faCartShopping} />
+                                    Remove <FontAwesomeIcon className='item-cart-icon' icon={faCartShopping} />
                                 </div>
                             </div>
                         </div>
                     </div>
                 ))}
-
-
             </div>
         </div>
     )

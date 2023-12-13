@@ -3,6 +3,7 @@ import '../assets/styles/display.css'
 import GameCard from './GameCard';
 import { GAMES_API } from '../utils/constants';
 import Pagination from './Pagination';
+import Shimmer from './Shimmer';
 
 const Display = () => {
     const [data, setData] = useState(null);
@@ -35,7 +36,7 @@ const Display = () => {
                         data.results.map((game) => <GameCard key={game.id} data={game} />)}
                 </div>
             ) : (
-                <p>Loading...</p>
+                <Shimmer />
             )}
 
             {data && data.count > 40 && (
