@@ -39,9 +39,7 @@ const GameCard = ({ data }) => {
     const handleAddItem = (dataToAdd) => {
         // dispatching a action
         dispatch(addItem(dataToAdd));
-        console.log()
     }
-
 
     return (
         <div className="game-card">
