@@ -7,16 +7,20 @@ import Display from './components/Display'
 import FilteredCard from './components/FilteredCard'
 import './index.css'
 import Cart from './components/Cart'
+import { Provider } from 'react-redux'
+import appStore from './utils/appStore'
 
 const App = () => {
   return (
-    <div className="app">
-      <Header />
-      <div className="container">
-        <SideNav />
-        <Outlet />
+    <Provider store={appStore}>
+      <div className="app">
+        <Header />
+        <div className="container">
+          <SideNav />
+          <Outlet />
+        </div>
       </div>
-    </div>
+    </Provider>
   )
 }
 
