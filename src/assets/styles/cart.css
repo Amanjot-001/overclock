@@ -1,10 +1,144 @@
 #cart {
     display: flex;
     flex-direction: column;
+    padding: 1rem 2rem;
+    width: 100%;
+    height: 200vh;
+    gap: 2rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .cart-heading {
     color: #fff;
     font-size: 4rem;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap;
+    height: 100%;
+    width: 100%; */
+    flex-grow: 1;
+    gap: 1.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    height: 15rem;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #1c1c1c;
+    color: #fff;
+    gap: 1rem;
+}
+
+.item-img {
+    /* flex-grow: 1; */
+    width: 40%;
+    height: 100%;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }   
+}
+
+.item-content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between  ;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.item-name {
+    display: flex;
+    /* gap: 0.5rem; */
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.item-top-sec, .item-mid-sec, .item-down-sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+}
+
+.item-metarating {
+    display: flex;
+    width: max-content;
+    color: #6dc849;
+    border: 1px solid #6dc849;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    font-weight: 800;
+}
+
+.item-platforms {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: max-content;
+}
+
+.item-wishlist-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    color: #6dc849;
+    border: 1px solid #6dc849;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+.item-follows {
+    width: max-content;
+    padding: 0.3rem;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.item-follows:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.item-remove-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    color: #6dc849;
+    border: 1px solid #6dc849;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    transition: box-shadow 0.3s ease;
+}
+
+.item-remove-btn:hover, .item-wishlist-btn:hover {
+    box-shadow: 0 0 10px rgba(109, 200, 73, 0.7);
 }
