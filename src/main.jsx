@@ -9,6 +9,8 @@ import './index.css'
 import Cart from './components/Cart'
 import { Provider } from 'react-redux'
 import appStore from './utils/appStore'
+import Profile from './components/Profile'
+import Wishlist from './components/Wishlist'
 
 const App = () => {
   return (
@@ -44,6 +46,14 @@ const appRouter = createBrowserRouter([
       {
         path: '/games/:timeFrame',
         element: <FilteredCard />
+      },
+      {
+        path: '/profile',
+        element: <Profile />
+      },
+      {
+        path: '/wishlist',
+        element: <Wishlist />
       }
     ]
   }
