@@ -5,7 +5,7 @@ import nintendo from '../assets/images/switch-icon.png';
 import { useMemo } from 'react';
 import '../assets/styles/cart.css'
 import { getRatingIcon, getPlatformIcon } from '../utils/useGameCard';
-import { clearCart } from '../utils/cartSlice';
+import { clearCart, removeItem } from '../utils/cartSlice';
 
 const Cart = () => {
     const cartItems = useSelector((store) => store.cart.items);
@@ -14,6 +14,10 @@ const Cart = () => {
 
     const handleClearCart = () => {
         dispatch(clearCart());
+    }
+
+    const handleRemoveItem = (dataToRemove) => {
+        dispatch(removeItem(dataToRemove));
     }
 
     return (
@@ -66,7 +70,7 @@ const Cart = () => {
                                     <div className="item-follows">
                                         +{data.added}
                                     </div>
-                                    <div className="item-remove-btn">
+                                    <div className="item-remove-btn" onClick={() => handleRemoveItem(data)}>
                                         Remove <FontAwesomeIcon className='item-cart-icon' icon={faCartShopping} />
                                     </div>
                                 </div>
