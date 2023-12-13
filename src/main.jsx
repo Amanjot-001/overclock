@@ -6,6 +6,7 @@ import SideNav from './components/SideNav'
 import Display from './components/Display'
 import FilteredCard from './components/FilteredCard'
 import './index.css'
+import Cart from './components/Cart'
 
 const App = () => {
   return (
@@ -27,6 +28,10 @@ const appRouter = createBrowserRouter([
       {
         path: '/',
         element: <Display />
+      },
+      {
+        path: '/cart',
+        element: <Cart />
       },
       {
         path: '/discover/:timeFrame',
