@@ -6,6 +6,8 @@ import { getRatingIcon, getPlatformIcon } from '../utils/useGameCard';
 import PropTypes from 'prop-types'
 import { useMemo } from 'react';
 import '../assets/styles/gameCard.css'
+import { useDispatch } from 'react-redux';
+import { addItem } from '../utils/cartSlice';
 
 const GameCard = ({ data }) => {
     const rating = getRatingIcon(data.ratings[0]?.title);
@@ -32,6 +34,14 @@ const GameCard = ({ data }) => {
     // };
 
     const nintendoIcon = useMemo(() => <img className='switch-icon' src={nintendo} alt="Nintendo Switch" />, []);
+
+    const dispatch = useDispatch();
+    const handleAddItem = (dataToAdd) => {
+        // dispatching a action
+        dispatch(addItem(dataToAdd));
+        console.log()
+    }
+
 
     return (
         <div className="game-card">
@@ -75,7 +85,7 @@ const GameCard = ({ data }) => {
                             <div className="follow">
                                 +{data.added}
                             </div>
-                            <div className="add-btn">
+                            <div className="add-btn" onClick={() => handleAddItem(data)}>
                                 Add <FontAwesomeIcon className='cart-icon' icon={faCartShopping} />
                             </div>
                         </div>
