@@ -2,8 +2,11 @@ import '../assets/styles/header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+    const cartItems = useSelector((store) => store.cart.items);
+
     return (
         <div className="header">
             <div className="logo">
@@ -18,7 +21,7 @@ const Header = () => {
                 <NavLink to='/cart' className='links'>
                     <div className="cart">
                         <FontAwesomeIcon icon={faCartShopping} />
-                        (0)
+                        ({cartItems.length})
                     </div>
                 </NavLink>
             </div>
