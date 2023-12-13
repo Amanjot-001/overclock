@@ -6,39 +6,25 @@ import { getRatingIcon, getPlatformIcon } from '../utils/useGameCard';
 import PropTypes from 'prop-types'
 import { useMemo } from 'react';
 import '../assets/styles/gameCard.css'
-import { useDispatch } from 'react-redux';
-import { addItem } from '../utils/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem, removeItem } from '../utils/cartSlice';
 
 const GameCard = ({ data }) => {
     const rating = getRatingIcon(data.ratings[0]?.title);
     const metaRating = data.metacritic;
-    // const getPlatformIcon = (platformName) => {
-    //     switch (platformName) {
-    //         case 'pc':
-    //             return faWindows;
-    //         case 'playstation':
-    //             return faPlaystation;
-    //         case 'xbox':
-    //             return faXbox;
-    //         case 'mac':
-    //             return faApple;
-    //         case 'ios':
-    //             return faAppStoreIos;
-    //         case 'android':
-    //             return faAndroid;
-    //         case 'nintendo':
-    //             return nintendoIcon;
-    //         default:
-    //             return null;
-    //     }
-    // };
 
     const nintendoIcon = useMemo(() => <img className='switch-icon' src={nintendo} alt="Nintendo Switch" />, []);
 
+    const cartItems = useSelector((store) => store.cart.items);
+
+    const isAdded = cartItems.some(item => item.id === data.id);
+
     const dispatch = useDispatch();
-    const handleAddItem = (dataToAdd) => {
-        // dispatching a action
-        dispatch(addItem(dataToAdd));
+    const handleAddItem = (dataToChange) => {
+        if (!isAdded)
+            dispatch(addItem(dataToChange));
+        else
+            dispatch(removeItem(dataToChange));
     }
 
     return (
@@ -83,8 +69,9 @@ const GameCard = ({ data }) => {
                             <div className="follow">
                                 +{data.added}
                             </div>
-                            <div className="add-btn" onClick={() => handleAddItem(data)}>
-                                Add <FontAwesomeIcon className='cart-icon' icon={faCartShopping} />
+                            <div className={`add-btn ${isAdded ? 'added' : null}`} onClick={() => handleAddItem(data)}>
+                                {isAdded ? 'Remove' : 'Add'}
+                                <FontAwesomeIcon className='cart-icon' icon={faCartShopping} />
                             </div>
                         </div>
                     </div>
