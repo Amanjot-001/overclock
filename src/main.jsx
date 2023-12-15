@@ -1,30 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
-import Header from './components/Header'
-import SideNav from './components/SideNav'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Display from './components/Display'
 import FilteredCard from './components/FilteredCard'
 import './index.css'
+import App from './components/App'
 import Cart from './components/Cart'
-import { Provider } from 'react-redux'
-import appStore from './utils/appStore'
 import Profile from './components/Profile'
 import Wishlist from './components/Wishlist'
-
-const App = () => {
-  return (
-    <Provider store={appStore}>
-      <div className="app">
-        <Header />
-        <div className="container">
-          <SideNav />
-          <Outlet />
-        </div>
-      </div>
-    </Provider>
-  )
-}
 
 const appRouter = createBrowserRouter([
   {
