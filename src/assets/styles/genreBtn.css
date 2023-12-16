@@ -22,3 +22,13 @@ img {
     font-weight: 400;
     cursor: pointer;
 }
+
+@media (max-width: 769px) {
+    .genreBtn {
+        font-size: 0.9rem;
+    }
+
+    .genre-image {
+        width: 1.8rem;
+    }
+}

@@ -41,3 +41,9 @@
     background-color: #fff;
     color: #000;
 }
+
+@media (max-width: 769px) {
+    .navBtn {
+        font-size: 0.9rem;
+    }
+}

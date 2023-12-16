@@ -27,7 +27,8 @@
     padding: 1rem;
 }
 
-.top-sec, .down-sec {
+.top-sec,
+.down-sec {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,7 +65,7 @@
     display: flex;
 }
 
-.rating{
+.rating {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,7 +102,8 @@
     transition: box-shadow 0.3s ease;
 }
 
-.add-btn:hover, .wishlist-btn:hover {
+.add-btn:hover,
+.wishlist-btn:hover {
     box-shadow: 0 0 10px rgba(109, 200, 73, 0.7);
 }
 
@@ -141,7 +143,39 @@
 
 .added {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+
     .cart-icon {
         color: #fff !important;
     }
+}
+
+@media (max-width: 769px) {
+    .game-card {
+        width: 15rem;
+    }
+
+    .name {
+        font-size: 1rem;
+    }
+
+    .meta-rating {
+        font-size: 0.6rem;
+    }
+
+    .add-btn {
+        font-size: 1rem;
+    }
+
+    .wishlist-btn {
+        font-size: 0.6rem;
+    }
+
+    .cart-icon {
+        font-size: 0.9rem;
+    }
+
+    .follow {
+        font-size: 0.8rem;
+    }
+    
 }
