@@ -35,7 +35,7 @@
     border-radius: 25px;
     outline: none;
     border: none;
-    background-color: hsl(0,0%,100/1)
+    background-color: hsl(0, 0%, 100/1)
 }
 
 .navs {
@@ -58,4 +58,70 @@
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+}
+
+.toggle-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .toggle-btn {
+        display: flex !important;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid #fff;
+        background-color: transparent;
+        min-width: 2rem;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+        color: #000;
+        border-color: #000;
+        background-color: #fff;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .navs {
+        display: none;
+        flex-direction: column;
+        align-items: start;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #000;
+        padding: 1rem 2rem 1rem 1rem;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        z-index: 2;
+
+        div {
+            border: 1px solid #000;
+            border-radius: 5px;
+            padding: 0.2rem;
+        }
+    }
+
+    .show-nav {
+        display: flex;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        animation: slideIn 0.3s forwards;
+    }
+
+    @keyframes slideIn {
+        to {
+            transform: translateX(0);
+        }
+    }
 }
