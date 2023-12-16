@@ -11,11 +11,11 @@ const SideNav = () => {
                     Home
                 </div>
             </NavLink>
-            <NavLink className='links' to="/reviews">
+            {/* <NavLink className='links' to="/reviews"> */}
                 <div className="reviews">
                     Reviews
                 </div>
-            </NavLink>
+            {/* </NavLink> */}
             <NavLink className='links' to="/profile">
                 <div className="profile">
                     <p>Amanjot</p>

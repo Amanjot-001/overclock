@@ -6,6 +6,7 @@
     height: 200vh;
     flex-grow: 1;
     gap: 2rem;
+    overflow: hidden;
 }
 
 /* .dummy-heading {
