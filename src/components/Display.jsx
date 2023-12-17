@@ -31,14 +31,14 @@ const Display = () => {
     return (
         <div className="display">
             <h1 className='display-heading'>All Games</h1>
-            {/* {data ? (
+            {data ? (
                 <div className="games">
                     {Array.isArray(data.results) &&
                         data.results.map((game) => <GameCard key={game.id} data={game} />)}
                 </div>
-            ) : ( */}
+            ) : (
                 <Shimmer />
-            {/* )} */}
+            )}
 
             {data && data.count > 40 && (
                 <Pagination 

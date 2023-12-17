@@ -63,7 +63,7 @@ const Cart = () => {
                                         })}
                                     </div>
                                     <div className="item-wishlist-btn">
-                                        wishlist <FontAwesomeIcon className='wishlist-icon' icon={faGift} />
+                                        wishlist <FontAwesomeIcon className='item-wishlist-icon' icon={faGift} />
                                     </div>
                                 </div>
                                 <div className="item-down-sec">
