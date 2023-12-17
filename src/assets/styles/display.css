@@ -56,4 +56,12 @@
     .display {
         padding: 0.8rem 1.2rem 0.8rem 0.4rem;
     }
+
+    .display-heading {
+        font-size: 2.5rem;
+    }
+
+    .games {
+        margin-bottom: 0.5rem;
+    }
 }

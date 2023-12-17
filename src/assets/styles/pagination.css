@@ -61,6 +61,7 @@
 @media (max-width: 480px) {
     .pagination {
         padding: 0.5rem;
+        gap: 0.3rem;
     }
 
     .page-btn, .prev-btn, .next-btn {
