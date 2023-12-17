@@ -144,3 +144,13 @@ a.active .navBtn-image .nintendo-icon {
         align-items: end;
     }
 }
+
+@media (max-width: 480px) {
+    .side-toggle {
+        margin: 0.8rem 1.2rem;
+    }
+
+    .sidenav-content {
+        padding: 0.8rem 1.2rem;
+    }
+}

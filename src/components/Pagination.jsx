@@ -9,7 +9,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
     const getPageNumbers = () => {
         const pages = [];
-        const range = 2;
+        const range = 1;
 
         let showEllipsisStart = true;
         let showEllipsisEnd = true;

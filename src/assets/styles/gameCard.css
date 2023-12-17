@@ -158,16 +158,12 @@
         font-size: 1rem;
     }
 
-    .meta-rating {
+    .meta-rating, .wishlist-btn {
         font-size: 0.6rem;
     }
 
     .add-btn {
         font-size: 1rem;
-    }
-
-    .wishlist-btn {
-        font-size: 0.6rem;
     }
 
     .cart-icon {
@@ -177,5 +173,15 @@
     .follow {
         font-size: 0.8rem;
     }
-    
+}
+
+@media (max-width: 480px) {
+    .game-card{
+        width: 12rem;
+    }
+
+    .content {
+        padding: 0.8rem;
+        gap: 0.3rem;
+    }
 }
