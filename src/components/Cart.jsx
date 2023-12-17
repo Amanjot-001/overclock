@@ -28,7 +28,7 @@ const Cart = () => {
                     Clear Cart
                 </div>
             </div>
-            {cartItems.length > 0 ?
+            {(cartItems && cartItems.length > 0) ?
                 <div className="cart-items">
                     {cartItems.map((data) => (
                         <div key={data.id} className="cart-item">
@@ -81,7 +81,8 @@ const Cart = () => {
                 :
                 <div className="empty-msg">
                     Add items to cart!
-                </div>}
+                </div>
+            }
         </div>
     )
 }
