@@ -12,6 +12,7 @@ const Display = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
+                setData(null);
                 const response = await fetch(`${GAMES_API}&page=${currentPage}&page_size=40`);
                 const res = await response.json();
                 setData(res);

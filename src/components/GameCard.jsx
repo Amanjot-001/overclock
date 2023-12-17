@@ -4,12 +4,15 @@ import { faCartShopping, faGift } from '@fortawesome/free-solid-svg-icons';
 import nintendo from '../assets/images/switch-icon.png';
 import { getRatingIcon, getPlatformIcon } from '../utils/useGameCard';
 import PropTypes from 'prop-types'
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import '../assets/styles/gameCard.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem, removeItem } from '../utils/cartSlice';
+import defaultImg from '../assets/images/game.jpg'
 
 const GameCard = ({ data }) => {
+    const [bgimgLoaded, setBgimgLoaded] = useState(false);
+
     const rating = getRatingIcon(data.ratings[0]?.title);
     const metaRating = data.metacritic;
 
@@ -32,7 +35,11 @@ const GameCard = ({ data }) => {
             {data ? (
                 <>
                     <div className="game-img">
-                        <img src={data.background_image} alt="" />
+                        <img 
+                            src={bgimgLoaded ? data.background_image: defaultImg}
+                            alt="game-img" 
+                            onLoad={() => setBgimgLoaded(true)}
+                        />
                     </div>
                     <div className="content">
                         <div className="top-sec">

@@ -20,6 +20,7 @@ const FilteredCard = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
+                setData(null);
                 const response = await fetch(`${API_TO_USE}&page=${currentPage}&page_size=40`);
                 const res = await response.json();
                 setData(res);
