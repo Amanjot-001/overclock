@@ -72,3 +72,29 @@
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
 }
+
+@media (max-width: 769px) {
+    .dummy-card {
+        width: 15rem;
+        height: 18rem;
+    }
+
+    .dummy-top, .dummy-mid, .dummy-down {
+        height: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dummy-games {
+        gap: 1rem;
+    }
+    
+    .dummy-card {
+        width: 12rem;
+        height: 15rem;
+    }
+
+    .dummy-top, .dummy-mid, .dummy-down {
+        height: 1.5rem;
+    }
+}

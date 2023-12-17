@@ -57,7 +57,11 @@ const FilteredCard = () => {
             )}
 
             {data && data.count > 40 && (   
-                <Pagination currentPage={currentPage} totalPages={Math.floor(data.count / 40)} onPageChange={handlePageChange} />
+                <Pagination 
+                    currentPage={currentPage} 
+                    totalPages={Math.min(Math.floor(data.count / 40), 250)} 
+                    onPageChange={handlePageChange} 
+                />
             )}
         </div>
     )
