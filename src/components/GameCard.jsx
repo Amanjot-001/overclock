@@ -84,17 +84,18 @@ const GameCard = ({ data }) => {
                                 :
                                 <div className="all-images">
                                     <img
-                                        src={data.short_screenshots.find(item => item.id === lastHoveredImage)?.image}
+                                        src={data?.short_screenshots.find(item => item.id === lastHoveredImage)?.image || data.background_image}
                                         alt={`screenshot`}
                                         onLoad={() => setBgimgLoaded(true)}
                                     />
-                                    <div className="image-btns">
+                                    <div className="image-btns" onMouseLeave={() => handleImageHover(-1)}                                    >
                                         {data.short_screenshots.map((item) => (
                                             <div
                                                 key={item.id}
                                                 className={`image-key ${lastHoveredImage === item.id ? 'image-key-active' : ''}`}
                                                 onMouseEnter={() => handleImageHover(item.id)}
                                             >
+                                                <div></div>
                                             </div>
                                         ))}
                                     </div>
