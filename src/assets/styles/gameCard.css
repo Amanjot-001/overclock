@@ -1,5 +1,6 @@
 .fake {
     width: 16rem;
+    min-height: 16rem;
     /* height: 25rem; */
     position: relative;
 }
@@ -32,6 +33,12 @@
 
 .game-img {
     flex-grow: 1;
+}
+
+.default-image {
+    object-fit: cover;
+    object-position: center;
+    height: 8rem;
 }
 
 /* img {
@@ -208,6 +215,11 @@
 @media (max-width: 769px) {
     .fake {
         width: 14rem;
+        /* min-height: 1rem; */
+    }
+
+    .default-image {
+        height: 6rem;
     }
 
     .game-card {
@@ -239,6 +251,11 @@
 @media (max-width: 480px) {
     .fake {
         width: 11rem;
+        min-height: 12rem;
+    }
+
+    .default-image {
+        height: 5rem;
     }
     
     .game-card {
@@ -252,5 +269,13 @@
 
     .add-btn {
         font-size: 0.9rem;
+    }
+
+    .extra-sec {
+        font-size: 0.7rem;
+    }
+
+    .see-more-btn {
+        padding: 0.4rem 0.8rem;
     }
 }

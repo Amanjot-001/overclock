@@ -6,6 +6,7 @@
     height: 200vh;
     flex-grow: 1;
     gap: 2rem;
+    padding: 1rem 2rem;
     overflow: hidden;
 }
 
@@ -74,6 +75,10 @@
 }
 
 @media (max-width: 769px) {
+    .shimmer {
+        padding: 1rem 1.8rem;
+    }
+
     .dummy-card {
         width: 14rem;
         height: 18rem;
@@ -85,6 +90,10 @@
 }
 
 @media (max-width: 480px) {
+    .shimmer {
+        padding: 0.8rem 0rem 0.8rem 0.4rem;
+    }
+
     .dummy-games {
         gap: 1rem;
     }

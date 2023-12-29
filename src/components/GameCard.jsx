@@ -1,3 +1,4 @@
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { faCartShopping, faChevronRight, faGift } from '@fortawesome/free-solid-svg-icons';
@@ -36,14 +37,14 @@ const GameCard = ({ data }) => {
             dispatch(removeItem(dataToChange));
     }
 
-    useEffect(() => {
-        const updateHeight = () => {
-            if (cardRef.current) {
-                const cardHeight = cardRef.current.offsetHeight;
-                setFakeHeight(cardHeight);
-            }
-        };
+    const updateHeight = () => {
+        if (cardRef.current) {
+            const cardHeight = cardRef.current.offsetHeight;
+            setFakeHeight(cardHeight);
+        }
+    };
 
+    useEffect(() => {
         updateHeight();
 
         window.addEventListener('resize', updateHeight);
@@ -53,15 +54,25 @@ const GameCard = ({ data }) => {
         };
     });
 
+    const handleMouseEvent = () => {
+        updateHeight();
+    };
+
     return (
         <FakeContainer className='fake' height={fakeHeight}>
-            <div className="game-card" ref={cardRef}>
+            <div
+                className="game-card"
+                ref={cardRef}
+                // onMouseEnter={handleMouseEvent}
+                onMouseLeave={handleMouseEvent}
+            >
                 {data ? (
                     <>
                         <div className="game-img">
                             <img
                                 src={bgimgLoaded ? data.background_image : defaultImg}
                                 alt="game-img"
+                                className={bgimgLoaded ? '' : 'default-image'}
                                 onLoad={() => setBgimgLoaded(true)}
                             />
                         </div>
@@ -115,11 +126,13 @@ const GameCard = ({ data }) => {
                                     <div className="game-genre">
                                         <span>Genres:</span>
                                         <span className='all-genres'>
-                                            {data.genres.map((gameGenre) => (
-                                                <span key={gameGenre.id}>
+                                            {data.genres.slice(0, 3).map((gameGenre, index) => (
+                                                <React.Fragment key={gameGenre.id}>
+                                                    {index > 0 && ', '}
                                                     {gameGenre.name}
-                                                </span>
+                                                </React.Fragment>
                                             ))}
+                                            {data.genres.length > 3 && '...'}
                                         </span>
                                     </div>
                                     <hr />
