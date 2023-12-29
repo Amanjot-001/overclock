@@ -19,6 +19,7 @@ const GameCard = ({ data }) => {
     const [bgimgLoaded, setBgimgLoaded] = useState(false);
     const [lastHoveredImage, setLastHoveredImage] = useState(-1);
     const [fakeHeight, setFakeHeight] = useState(null);
+    const [outOfCard, setOutOfCard] = useState(false);
     const cardRef = useRef(null);
 
     const rating = getRatingIcon(data.ratings[0]?.title);
@@ -49,8 +50,12 @@ const GameCard = ({ data }) => {
         setLastHoveredImage(itemId);
     };
 
-    const handleMouseEvent = () => {
+    const handleMouseEvent = (e) => {
+        if (e.target !== cardRef.current) {
+            return;
+        }
         updateHeight();
+        setOutOfCard(prev => !prev);
     };
 
     useEffect(() => {
@@ -61,14 +66,14 @@ const GameCard = ({ data }) => {
         return () => {
             window.removeEventListener('resize', updateHeight);
         };
-    });
+    }, [bgimgLoaded, outOfCard]);
 
     return (
         <FakeContainer className='fake' height={fakeHeight}>
             <div
                 className="game-card"
                 ref={cardRef}
-                // onMouseEnter={handleMouseEvent}
+                // onMouseEnter={setOutOfCard(prev => !prev)}
                 onMouseLeave={handleMouseEvent}
             >
                 {data ? (
