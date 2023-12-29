@@ -54,11 +54,12 @@
 
 @media (max-width: 480px) {
     .display {
-        padding: 0.8rem 1.2rem 0.8rem 0.4rem;
+        padding: 0.8rem 0rem 0.8rem 0.4rem;
     }
 
     .display-heading {
         font-size: 2.5rem;
+        margin-left: 0.8rem;
     }
 
     .games {
