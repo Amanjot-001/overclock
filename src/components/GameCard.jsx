@@ -51,7 +51,7 @@ const GameCard = ({ data }) => {
         return () => {
             window.removeEventListener('resize', updateHeight);
         };
-    }, [bgimgLoaded]);
+    });
 
     return (
         <FakeContainer className='fake' height={fakeHeight}>
@@ -105,28 +105,30 @@ const GameCard = ({ data }) => {
                                     <FontAwesomeIcon className='cart-icon' icon={faCartShopping} />
                                 </div>
                             </div>
-                            <div className="extra-sec">
-                                <div className="released">
-                                    <span>Release date:</span>
-                                    <span>{data.released}</span>
+                            {bgimgLoaded &&
+                                <div className="extra-sec">
+                                    <div className="released">
+                                        <span>Release date:</span>
+                                        <span>{data.released}</span>
+                                    </div>
+                                    <hr />
+                                    <div className="game-genre">
+                                        <span>Genres:</span>
+                                        <span className='all-genres'>
+                                            {data.genres.map((gameGenre) => (
+                                                <span key={gameGenre.id}>
+                                                    {gameGenre.name}
+                                                </span>
+                                            ))}
+                                        </span>
+                                    </div>
+                                    <hr />
+                                    <div className="see-more-btn">
+                                        <span>See more</span>
+                                        <span><FontAwesomeIcon icon={faChevronRight} /></span>
+                                    </div>
                                 </div>
-                                <hr />
-                                <div className="game-genre">
-                                    <span>Genres:</span>
-                                    <span className='all-genres'>
-                                        {data.genres.map((gameGenre) => (
-                                            <span key={gameGenre.id}>
-                                                {gameGenre.name}
-                                            </span>
-                                        ))}
-                                    </span>
-                                </div>
-                                <hr />
-                                <div className="see-more-btn">
-                                    <span>See more</span>
-                                    <span><FontAwesomeIcon icon={faChevronRight} /></span>
-                                </div>
-                            </div>
+                            }
                         </div>
                     </>
                 ) : (

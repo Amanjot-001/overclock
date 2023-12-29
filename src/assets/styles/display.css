@@ -3,10 +3,14 @@
     flex-direction: column;
     /* flex-grow: 1; */
     color: #fff;
-    padding: 1rem 2rem;
+    /* padding: 1rem 2rem; */
     height: 200vh;
     flex-grow: 1;
-    gap: 2rem;
+    /* gap: 2rem; */
+}
+
+.display-heading {
+    padding: 1rem 2rem;
 }
 
 .games {
@@ -18,7 +22,8 @@
     flex-grow: 1;
     gap: 1.5rem;
     overflow-x: auto;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
+    padding: 1rem 2rem;
 }
 
 .games::-webkit-scrollbar {
@@ -43,7 +48,7 @@
 }
 
 @media (max-width: 769px) {
-    .display {
+    .display-heading, .games {
         padding: 1rem 1.8rem;
     }
 
@@ -53,7 +58,7 @@
 }
 
 @media (max-width: 480px) {
-    .display {
+    .display-heading, .games {
         padding: 0.8rem 0rem 0.8rem 0.4rem;
     }
 

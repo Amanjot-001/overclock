@@ -12,6 +12,7 @@
     border-radius: 50px;
     gap: 0.5rem;
     margin: auto;
+    z-index: 3;
 }
 
 .pagination button {

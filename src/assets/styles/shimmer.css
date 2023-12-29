@@ -43,7 +43,7 @@
 .dummy-card {
     display: flex;
     flex-direction: column;
-    width: 20rem;
+    width: 16rem;
     height: 22rem;
     border-radius: 20px;
     overflow: hidden;
@@ -75,7 +75,7 @@
 
 @media (max-width: 769px) {
     .dummy-card {
-        width: 15rem;
+        width: 14rem;
         height: 18rem;
     }
 
@@ -90,7 +90,7 @@
     }
 
     .dummy-card {
-        width: 12rem;
+        width: 11rem;
         height: 15rem;
     }
 
