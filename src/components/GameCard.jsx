@@ -17,6 +17,7 @@ const FakeContainer = styled.div`
 
 const GameCard = ({ data }) => {
     const [bgimgLoaded, setBgimgLoaded] = useState(false);
+    const [lastHoveredImage, setLastHoveredImage] = useState(-1);
     const [fakeHeight, setFakeHeight] = useState(null);
     const cardRef = useRef(null);
 
@@ -44,6 +45,14 @@ const GameCard = ({ data }) => {
         }
     };
 
+    const handleImageHover = (itemId) => {
+        setLastHoveredImage(itemId);
+    };
+
+    const handleMouseEvent = () => {
+        updateHeight();
+    };
+
     useEffect(() => {
         updateHeight();
 
@@ -53,10 +62,6 @@ const GameCard = ({ data }) => {
             window.removeEventListener('resize', updateHeight);
         };
     });
-
-    const handleMouseEvent = () => {
-        updateHeight();
-    };
 
     return (
         <FakeContainer className='fake' height={fakeHeight}>
@@ -69,12 +74,32 @@ const GameCard = ({ data }) => {
                 {data ? (
                     <>
                         <div className="game-img">
-                            <img
-                                src={bgimgLoaded ? data.background_image : defaultImg}
-                                alt="game-img"
-                                className={bgimgLoaded ? '' : 'default-image'}
-                                onLoad={() => setBgimgLoaded(true)}
-                            />
+                            {!bgimgLoaded ?
+                                <img
+                                    src={defaultImg}
+                                    alt="game-img"
+                                    className='default-image'
+                                    onLoad={() => setBgimgLoaded(true)}
+                                />
+                                :
+                                <div className="all-images">
+                                    <img
+                                        src={data.short_screenshots.find(item => item.id === lastHoveredImage)?.image}
+                                        alt={`screenshot`}
+                                        onLoad={() => setBgimgLoaded(true)}
+                                    />
+                                    <div className="image-btns">
+                                        {data.short_screenshots.map((item) => (
+                                            <div
+                                                key={item.id}
+                                                className={`image-key ${lastHoveredImage === item.id ? 'image-key-active' : ''}`}
+                                                onMouseEnter={() => handleImageHover(item.id)}
+                                            >
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            }
                         </div>
                         <div className="content">
                             <div className="top-sec">
