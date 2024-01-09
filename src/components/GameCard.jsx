@@ -75,6 +75,7 @@ const GameCard = ({ data }) => {
         ref={cardRef}
         // onMouseEnter={setOutOfCard(prev => !prev)}
         onMouseLeave={handleMouseEvent}
+        onLoad={updateHeight}
       >
         {data ? (
           <>
