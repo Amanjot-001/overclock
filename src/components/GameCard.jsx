@@ -20,6 +20,7 @@ const GameCard = ({ data }) => {
   const [lastHoveredImage, setLastHoveredImage] = useState(-1);
   const [fakeHeight, setFakeHeight] = useState(null);
   const [outOfCard, setOutOfCard] = useState(false);
+  const [firstLoadDone, setFirstLoadDone] = useState(false);
   const cardRef = useRef(null);
 
   const rating = getRatingIcon(data.ratings[0]?.title);
@@ -43,19 +44,33 @@ const GameCard = ({ data }) => {
     if (cardRef.current) {
       const cardHeight = cardRef.current.offsetHeight;
       setFakeHeight(cardHeight);
+      //if (!firstLoadDone)
+      //setFirstLoadDone(true);
     }
   };
 
   const handleImageHover = (itemId) => {
     setLastHoveredImage(itemId);
+    if (!firstLoadDone)
+      setFirstLoadDone(true);
+  };
+
+  const isMouseLeavingGameCard = (target, element) => {
+    if (!target || target === element) {
+      return false;
+    }
+
+    return isMouseLeavingGameCard(target.parentNode, element);
   };
 
   const handleMouseEvent = (e) => {
-    if (e.target !== cardRef.current) {
-      return;
+    const target = e.target;
+    if (!isMouseLeavingGameCard(target, cardRef.current)) {
+      updateHeight();
+      setOutOfCard(prev => !prev);
+      if (!firstLoadDone)
+        setFirstLoadDone(true);
     }
-    updateHeight();
-    setOutOfCard(prev => !prev);
   };
 
   useEffect(() => {
@@ -75,7 +90,11 @@ const GameCard = ({ data }) => {
         ref={cardRef}
         // onMouseEnter={setOutOfCard(prev => !prev)}
         onMouseLeave={handleMouseEvent}
-        onLoad={updateHeight}
+        onLoad={() => {
+          if (!firstLoadDone) {
+            updateHeight();
+          }
+        }}
       >
         {data ? (
           <>
@@ -92,7 +111,7 @@ const GameCard = ({ data }) => {
                   <img
                     src={data?.short_screenshots.find(item => item.id === lastHoveredImage)?.image || data.background_image}
                     alt={`screenshot`}
-                    onLoad={() => setBgimgLoaded(true)}
+                  // onLoad={() => setBgimgLoaded(true)}
                   />
                   <div className="image-btns" onMouseLeave={() => handleImageHover(-1)}                                    >
                     {Array.isArray(data.short_screenshots) && data.short_screenshots.map((item) => (
