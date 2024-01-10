@@ -40,6 +40,24 @@ const GameCard = ({ data }) => {
       dispatch(removeItem(dataToChange));
   }
 
+  const loadAllImages = () => {
+    if (Array.isArray(data.short_screenshots)) {
+      const promises = data.short_screenshots.map((item) => {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.src = item.image;
+          img.onload = () => {
+            item.loaded = true;
+            resolve();
+          };
+        });
+      });
+      Promise.all(promises).then(() => {
+        setBgimgLoaded(true);
+      });
+    }
+  };
+
   const updateHeight = () => {
     if (cardRef.current) {
       const cardHeight = cardRef.current.offsetHeight;
@@ -74,6 +92,10 @@ const GameCard = ({ data }) => {
   };
 
   useEffect(() => {
+    loadAllImages();
+  }, [data]);
+
+  useEffect(() => {
     updateHeight();
 
     window.addEventListener('resize', updateHeight);
@@ -104,7 +126,7 @@ const GameCard = ({ data }) => {
                   src={defaultImg}
                   alt="game-img"
                   className='default-image'
-                  onLoad={() => setBgimgLoaded(true)}
+                // onLoad={() => setBgimgLoaded(true)}
                 />
                 :
                 <div className="all-images">

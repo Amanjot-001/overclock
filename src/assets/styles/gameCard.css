@@ -1,6 +1,6 @@
 .fake {
     width: 16rem;
-    min-height: 16rem;
+    min-height: 18rem;
     /* height: 25rem; */
     position: relative;
 }
@@ -310,7 +310,7 @@
 @media (max-width: 480px) {
     .fake {
         width: 11rem;
-        min-height: 12rem;
+        min-height: 13rem;
     }
 
     .default-image {
