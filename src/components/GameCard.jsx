@@ -82,6 +82,7 @@ const GameCard = ({ data }) => {
   };
 
   const handleMouseEvent = (e) => {
+    handleImageHover(-1);
     const target = e.target;
     if (!isMouseLeavingGameCard(target, cardRef.current)) {
       updateHeight();
@@ -135,7 +136,7 @@ const GameCard = ({ data }) => {
                     alt={`screenshot`}
                   // onLoad={() => setBgimgLoaded(true)}
                   />
-                  <div className="image-btns" onMouseLeave={() => handleImageHover(-1)}                                    >
+                  <div className="image-btns">
                     {Array.isArray(data.short_screenshots) && data.short_screenshots.map((item) => (
                       <div
                         key={item.id}
