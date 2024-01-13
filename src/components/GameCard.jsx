@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
-import { faCartShopping, faChevronRight, faGift } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faPlus } from '@fortawesome/free-solid-svg-icons';
 import nintendo from '../assets/images/switch-icon.png';
 import { getRatingIcon, getPlatformIcon } from '../utils/useGameCard';
 import PropTypes from 'prop-types'
@@ -10,6 +10,8 @@ import '../assets/styles/gameCard.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem, removeItem } from '../utils/cartSlice';
 import defaultImg from '../assets/images/game.jpg'
+import cart from '../assets/images/cart.png'
+import gift from '../assets/images/gift.png'
 
 const FakeContainer = styled.div`
   height: ${({ height }) => (height ? `${height}px` : 'auto')};
@@ -62,8 +64,6 @@ const GameCard = ({ data }) => {
     if (cardRef.current) {
       const cardHeight = cardRef.current.offsetHeight;
       setFakeHeight(cardHeight);
-      //if (!firstLoadDone)
-      //setFirstLoadDone(true);
     }
   };
 
@@ -162,6 +162,24 @@ const GameCard = ({ data }) => {
                     ) : null;
                   })}
                 </div>
+              </div>
+              <div className="name">
+                <a href="#">
+                  {data.name} <img className='rating-icon' src={rating} alt="rating-icon" />
+                </a>
+              </div>
+              <div className="down-sec">
+                {bgimgLoaded &&
+                  <div className="follow">
+                    <FontAwesomeIcon icon={faPlus} /> {data.added}
+                  </div>
+                }
+                <div className={`add-btn ${isAdded ? 'added' : null}`} onClick={() => handleAddItem(data)}>
+                  <img className='cart-icon' src={cart} alt="cart-icon" />
+                </div>
+                <div className="wishlist-btn">
+                  <img className='wishlist-icon' src={gift} alt='gift' />
+                </div>
                 {metaRating ?
                   <div className="meta-rating">
                     {metaRating}
@@ -169,26 +187,6 @@ const GameCard = ({ data }) => {
                   :
                   null
                 }
-              </div>
-              <div className="name">
-                {data.name}
-              </div>
-              <div className="mid-sec">
-                <div className="rating">
-                  <img className='rating-icon' src={rating} alt="rating-icon" />
-                </div>
-                <div className="wishlist-btn">
-                  wishlist <FontAwesomeIcon className='wishlist-icon' icon={faGift} />
-                </div>
-              </div>
-              <div className="down-sec">
-                <div className="follow">
-                  +{data.added}
-                </div>
-                <div className={`add-btn ${isAdded ? 'added' : null}`} onClick={() => handleAddItem(data)}>
-                  {isAdded ? 'Remove' : 'Add'}
-                  <FontAwesomeIcon className='cart-icon' icon={faCartShopping} />
-                </div>
               </div>
               {bgimgLoaded &&
                 <div className="extra-sec">
